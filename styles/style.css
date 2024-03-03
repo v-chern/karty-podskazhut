@@ -1,0 +1,152 @@
+:root {
+  --bg-color: #F5F5F5;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+
+  --main-font: Raleway, sans-serif;
+  --accent-font: 'STIX Two Text', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+.header {
+  padding-top: 10%;
+}
+
+.heading {
+  font-family: var(--accent-font);
+  font-weight: 600;
+  line-height: 90%;
+  text-align: center;
+}
+
+.content-section {
+  padding-left: 5vi;
+  padding-right: 5vi;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  margin-bottom: 40px;
+}
+
+.content__title {
+  font-size: 30px;
+  margin-top: 7%;
+  margin-bottom: 2.5%;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.content__text-block_type_first-lettered::first-letter {
+  display: inline-block;
+  background-color: var(--accent-color);
+  padding-left: 4px;
+  padding-right: 3px;
+  margin-right: 1px;
+  font-weight: 700;
+}
+
+.content__figure {
+  margin-top: 7%;
+  margin-bottom: 7%;
+  position:relative;
+  width: calc(100% + 10vi);
+  margin-left: -5vi;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.content__picture {
+  width: 100%;
+}
+
+.content__picture-caption {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.content__link {
+  color: inherit;
+}
+
+.content__blockquote {
+  width: 75%;
+  margin: auto;
+  font-style: italic;
+  line-height: 200%;
+  margin-bottom: 1.5em;
+}
+
+.content__card {
+  border: 1px solid var(--text-color);
+  margin-top: 7%;
+}
+
+.content__card-title {
+
+}
+
+.content__card-subtitle {
+
+}
+
+.colored-text {
+
+}
+
+.content__list {
+  list-style-type: none;
+  padding-inline-start: 40px;
+}
+
+.content__list .content__list-item:not(:last-child) {
+  margin-bottom: 10px; 
+}
+
+.content__list-item {
+  position: relative;
+}
+
+.content__list-item::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position:absolute;
+  left: -25px;
+  top: calc(50% - 7.5px);
+  background-image: url("../images/marker-light.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
