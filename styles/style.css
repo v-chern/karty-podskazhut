@@ -2,7 +2,6 @@
   --bg-color: #F5F5F5;
   --text-color: #312A4E;
   --accent-color: #FFAB6B;
-
   --main-font: Raleway, sans-serif;
   --accent-font: 'STIX Two Text', sans-serif;
 }
@@ -18,7 +17,7 @@
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: var(--main-font);
+  font-family: var(--main-font, sans-serif);
 }
 
 .theme_dark {
@@ -39,12 +38,17 @@ figure {
   margin: 0;
 }
 
+a:focus,
+button:focus {
+  outline: none;
+}
+
 .header {
   padding-top: 10%;
 }
 
 .heading {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, serif);
   font-weight: 600;
   line-height: 90%;
   text-align: center;
@@ -57,7 +61,7 @@ figure {
 
 .header__title {
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
-  margin-bottom: 40px;
+  margin-block-end: 40px;
 }
 
 .header__menu {
@@ -66,7 +70,7 @@ figure {
   align-items: center;
   border-top: 1px solid var(--text-color);
   border-bottom: 1px solid var(--text-color);
-  height: 71px;
+  padding-block: 20px;
 }
 
 .header__theme-toggler {
@@ -124,6 +128,7 @@ figure {
 
 .content__title {
   font-size: 30px;
+  margin: 0;
   margin-top: 7%;
   margin-bottom: 2.5%;
 }
@@ -133,7 +138,7 @@ figure {
 }
 
 .content__text-block .content__paragraph:not(:last-child) {
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
 }
 
 .content__text-block_type_first-lettered::first-letter {
@@ -143,6 +148,7 @@ figure {
   padding-right: 3px;
   margin-right: 1px;
   font-weight: 700;
+  font-size: 30px;
 }
 
 .theme_dark .content__text-block_type_first-lettered::first-letter {
@@ -156,8 +162,6 @@ figure {
   width: calc(100% + 10vi);
   margin-left: -5vi;
   border-bottom: 1px solid var(--text-color);
-  display: flex;
-  flex-direction: column;
 }
 
 .content__picture {
@@ -168,6 +172,8 @@ figure {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .content__link {
@@ -180,10 +186,9 @@ figure {
 
 .content__blockquote {
   width: 75%;
-  margin: auto;
+  margin: 0 auto 1.5em;
   font-style: italic;
   line-height: 200%;
-  margin-bottom: 1.5em;
 }
 
 .content__card {
@@ -198,21 +203,25 @@ figure {
 
 .content__card-title {
   font-size: 60px;
-  position: relative;
 }
 
 .content__card-subtitle {
   font-size: 18px;
 }
 
+.colored-text {
+  display: inline-block;
+  position: relative;
+}
+
 .colored-text::after {
   background-color: var(--accent-color);
   height: 0.3em;
-  width: calc(50% + 15px);
+  width: calc(100% + 10px);
   z-index: -1;
   content: "";
   position: absolute;
-  left: calc(50% - 10px);
+  inset-inline-start: -5px;
   top: 50%;
 }
 
